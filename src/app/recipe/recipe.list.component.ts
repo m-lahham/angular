@@ -10,14 +10,16 @@ export class RecipeListComponent implements OnInit {
     new Recipe("Recipe #1", "This is simply a test recipe","http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg"),
     new Recipe("Recipe #2", "This is simply aother test recipe","http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg")
   ];
-
+   
+  
   @Output() select = new EventEmitter<Recipe>() ;
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  selectItem(item:number){
+  selectItem(item:number){ 
     this.select.emit(this.recipes[item]);
   }
 }
