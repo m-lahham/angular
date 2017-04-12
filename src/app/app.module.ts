@@ -14,6 +14,7 @@ import {RecipeDetailsComponent} from './recipe/recipe.details.component';
 import {RecipeItemComponent} from './recipe/recipe.item.component';
 import {RecipeListComponent} from './recipe/recipe.list.component';
 import {DropDownDirective} from './shared/dropdown.directive';
+import {RecipeService} from './services/recipe.service';
 @NgModule({
   declarations: [
     AppComponent,
