@@ -3,8 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipe *ngIf="section == 'recipe'"></app-recipe>
-            <app-shopping *ngIf="section == 'shopping'"></app-shopping>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div> 
