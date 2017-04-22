@@ -6,15 +6,15 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output('show') display = new EventEmitter<string>();
+ // @Output('show') display = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelect(section:string){
-    this.display.emit(section);
-  }
+  // onSelect(section:string){
+  //   this.display.emit(section);
+  // }
 
 }
