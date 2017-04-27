@@ -12,7 +12,7 @@ import {Subscription} from 'rxjs/Subscription';
 export class ShoppingComponent implements OnInit, OnDestroy {
   ingredients : Ingredient[];
   private subscription : Subscription;
-  @Output() editEmitter = new EventEmitter<Ingredient>();
+  editItem : Ingredient;
 
   constructor(private shoppingService : ShoppingService) { }
 
@@ -28,9 +28,10 @@ export class ShoppingComponent implements OnInit, OnDestroy {
   }
 
   onEdit(item){
-      this.editEmitter.emit( this.ingredients.slice(item)[0]);
+     this.shoppingService.editIngredient(item);
   }
 
+  
   ngOnDestroy(){
     this.subscription.unsubscribe();
   }
