@@ -19,6 +19,7 @@ import {ShoppingService} from './services/shopping.service';
 import {AppRoutingModule} from './modules/app-routing.modules';
 import{NoRecipeSelectedComponent} from './recipe/no.recipe.selected';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
+import {ReactiveFormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,14 +36,16 @@ import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component'
     DropDownDirective,
     NoRecipeSelectedComponent,
     RecipeEditComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [ShoppingService],
+  providers: [ShoppingService,RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
