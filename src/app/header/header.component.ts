@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { RecipeService } from "../services/recipe.service";
+import { HttpService } from "../services/http.service";
 
 @Component({
   selector: 'app-header',
@@ -8,11 +10,27 @@ export class HeaderComponent implements OnInit {
 
  // @Output('show') display = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private recipeService : RecipeService, private httpService : HttpService) { }
 
   ngOnInit() {
   }
 
+  onSave(){
+    this.httpService.httpSaveData(this.recipeService.getRecipes() ).subscribe(
+      (response)=>{
+        console.log(response);
+      }
+    );
+  }
+
+  onFetch(){
+        this.httpService.httpFetchData().subscribe(
+      (recipesData)=>{
+        this.recipeService.setRecipes(recipesData);
+        
+      }
+    );
+  }
   // onSelect(section:string){
   //   this.display.emit(section);
   // }

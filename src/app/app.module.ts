@@ -19,7 +19,11 @@ import {ShoppingService} from './services/shopping.service';
 import {AppRoutingModule} from './modules/app-routing.modules';
 import{NoRecipeSelectedComponent} from './recipe/no.recipe.selected';
 import { RecipeEditComponent } from './recipe/recipe-edit/recipe-edit.component';
-import {ReactiveFormsModule} from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
+import { HttpService } from "./services/http.service";
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from "./auth/auth.service";
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,9 @@ import {ReactiveFormsModule} from '@angular/forms'
     RecipeListComponent,
     DropDownDirective,
     NoRecipeSelectedComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    SignupComponent,
+    SigninComponent
     
   ],
   imports: [
@@ -45,7 +51,7 @@ import {ReactiveFormsModule} from '@angular/forms'
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [ShoppingService,RecipeService],
+  providers: [ShoppingService,RecipeService,HttpService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
