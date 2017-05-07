@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { RecipeService } from "../services/recipe.service";
 import { HttpService } from "../services/http.service";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
  // @Output('show') display = new EventEmitter<string>();
 
-  constructor(private recipeService : RecipeService, private httpService : HttpService) { }
+  constructor(private recipeService : RecipeService, private httpService : HttpService, private authService : AuthService) { }
 
   ngOnInit() {
   }
@@ -30,6 +31,11 @@ export class HeaderComponent implements OnInit {
         
       }
     );
+  }
+
+  onLogout(){
+    console.log("logging out");
+    this.authService.logout();
   }
   // onSelect(section:string){
   //   this.display.emit(section);
