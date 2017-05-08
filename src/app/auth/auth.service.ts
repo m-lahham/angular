@@ -29,7 +29,7 @@ export class AuthService {
                     }
                 );
                 console.log(response);
-                this.router.navigate(['/recipe']);
+                this.router.navigate(['/']);
             }
         );
     }
