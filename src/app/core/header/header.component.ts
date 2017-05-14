@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { RecipeService } from "../services/recipe.service";
-import { HttpService } from "../services/http.service";
-import { AuthService } from "../auth/auth.service";
+import { RecipeService } from "../../services/recipe.service";
+import { HttpService } from "../../services/http.service";
+import { AuthService } from "../../auth/auth.service";
 
 @Component({
   selector: 'app-header',

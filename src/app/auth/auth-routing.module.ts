@@ -5,8 +5,10 @@ import { SigninComponent } from "../auth/signin/signin.component";
 
 
 const routes : Routes = [
-    {path : 'signup', component : SignupComponent},
-    {path : 'signin', component : SigninComponent}
+    
+        {path : 'signup', component : SignupComponent},
+        {path : 'signin', component : SigninComponent}
+
 ];
 
 
@@ -16,5 +18,7 @@ const routes : Routes = [
     exports : [RouterModule]    
 })
 export class AuthRoutingModule{
-
+    constructor(){
+        console.log('authorization routing module');
+    }
 }
